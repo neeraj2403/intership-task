@@ -14,6 +14,7 @@ class NewDetails extends StatelessWidget {
       height:MediaQuery.of(context).size.height,
       width: double.infinity,
       child: GridView.builder(
+        physics: ScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 5,
         ),
