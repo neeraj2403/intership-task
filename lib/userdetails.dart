@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskapp/ProfilePage.dart';
 import 'package:taskapp/user_model.dart';
 // import 'package:google_pay_ui/model/userModel.dart';
 
@@ -27,9 +28,17 @@ class UserDetails extends StatelessWidget {
             return GridTile(
               child: Column(
                 children: [
-                  CircleAvatar(
-                    backgroundImage: NetworkImage(dummyData[i].imgUrl),
-                    radius: 25,
+                  GestureDetector(
+                    child: CircleAvatar(
+                      backgroundImage: NetworkImage(dummyData[i].imgUrl),
+                      radius: 25,
+                    ),
+                    onTap: (){
+                       Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfilePage()),
+              );
+                    },
                   ),
                   SizedBox(height: 2),
                   Text(

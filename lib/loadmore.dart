@@ -54,18 +54,15 @@ class _LoadMoreState extends State<LoadMore> {
                         ),
                         textAlign: TextAlign.left,
                       )),
-                  GestureDetector(
-                    child: IconButton(
-                        onPressed: () {
-                          showToast();
-                          togglePanel();
-                        },
-                        icon: Icon(
-                          Icons.arrow_upward_sharp,
-                          color: Colors.white,
-                        )),
-                    onTap: togglePanel,
-                  )
+                  IconButton(
+                      onPressed: () {
+                        showToast();
+                        
+                      },
+                      icon: Icon(
+                        Icons.arrow_upward_sharp,
+                        color: Colors.white,
+                      ))
                 ],
               ),
               NewDetails(),
@@ -77,9 +74,7 @@ class _LoadMoreState extends State<LoadMore> {
     );
   }
 
-  void togglePanel() => panelController.isPanelOpen
-      ? panelController.close()
-      : panelController.open();
+
 
   Container Freqecontacted(BuildContext context) {
     return Container(

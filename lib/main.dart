@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taskapp/ProfilePage.dart';
 import 'package:taskapp/dashboard.dart';
 import 'package:taskapp/home.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      home: ProfilePage(),
     );
   }
 }

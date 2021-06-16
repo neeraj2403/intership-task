@@ -8,7 +8,7 @@ class CustomAvatars extends StatelessWidget {
 List<String> images = ["https://randomuser.me/portraits/men/51.jpg", "https://randomuser.me/portraits/men/51.jpg", "https://randomuser.me/portraits/men/51.jpg"];
     
     return Container(
-      margin: EdgeInsets.only(left: 90),
+      margin: EdgeInsets.only(left: 80,top: 10),
       child: ImageStack(
               imageList: images,
               totalCount: images.length ,// If larger than images.length, will show extra empty circle
