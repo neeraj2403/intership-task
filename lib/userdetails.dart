@@ -5,7 +5,9 @@ import 'package:taskapp/user_model.dart';
 class UserDetails extends StatelessWidget {
   // final ScrollController controller;
 
-  const UserDetails({ Key? key,  }) : super(key: key);
+  const UserDetails({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

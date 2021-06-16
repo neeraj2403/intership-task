@@ -84,36 +84,28 @@ class Single_prod extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-    child: GridTile(
-      footer: Container(
-          // color: Colors.white70,
-          child: new Text(
-            prod_name,
-            style: TextStyle(
-                 fontSize: 10.0),
-          )),
-      child: InkWell(
-        child: Container(
-                  // margin: EdgeInsets.only(right: 30,top: 30 ),
-                width:50,
-                height: 50,
-                decoration: BoxDecoration(
-                  // borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    image: AssetImage(prod_pictures),
-                    
-                    fit: BoxFit.fill),
-                  
-                  
-                  
-                ),
-                
-                
-                ),
-                onTap: (){},
+      child: GridTile(
+        footer: Container(
+            // color: Colors.white70,
+            child: new Text(
+          prod_name,
+          style: TextStyle(fontSize: 10.0),
+        )),
+        child: InkWell(
+          child: Container(
+            // margin: EdgeInsets.only(right: 30,top: 30 ),
+            width: 50,
+            height: 50,
+            decoration: BoxDecoration(
+              // borderRadius: BorderRadius.all(Radius.circular(8.0)),
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                  image: AssetImage(prod_pictures), fit: BoxFit.fill),
+            ),
+          ),
+          onTap: () {},
+        ),
       ),
-    ),
     );
   }
 }

@@ -5,13 +5,15 @@ import 'package:taskapp/user_model.dart';
 class NewDetails extends StatelessWidget {
   // final ScrollController controller;
 
-  const NewDetails({ Key? key,  }) : super(key: key);
+  const NewDetails({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 15),
-      height:MediaQuery.of(context).size.height,
+      height: MediaQuery.of(context).size.height,
       width: double.infinity,
       child: GridView.builder(
         physics: ScrollPhysics(),

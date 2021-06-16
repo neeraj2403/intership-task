@@ -42,7 +42,6 @@ List<UserModel> dummyData = [
   ),
 ];
 
-
 List<UserModel> newData = [
   new UserModel(
     name: "Stuart",
@@ -204,5 +203,4 @@ List<UserModel> newData = [
     name: "Henley",
     imgUrl: "https://randomuser.me/portraits/men/44.jpg",
   ),
-
 ];
