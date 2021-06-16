@@ -10,7 +10,6 @@ class LoadMore extends StatefulWidget {
   // final PanelController panelController;
   final panelController;
 
-
   const LoadMore({Key? key, required this.panelController}) : super(key: key);
 
   @override
@@ -19,11 +18,10 @@ class LoadMore extends StatefulWidget {
 
 class _LoadMoreState extends State<LoadMore> {
   // final panelController = PanelController();
-  
+
   bool _isVisible = true;
 
   get panelController => null;
-
 
   void showToast() {
     setState(() {
@@ -35,58 +33,53 @@ class _LoadMoreState extends State<LoadMore> {
   Widget build(BuildContext context) {
     return Visibility(
       visible: _isVisible,
-      
       child: Freqecontacted(context),
       replacement: Visibility(
-        child:Container(
-            // height: MediaQuery.of(context).size.height,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                UserDetails(),
-                Row(
-                  children: [
-                    Container(
-                        margin: EdgeInsets.only(left: 20),
-                        child: Text(
-                          "RECENTS",
-                          style: TextStyle(
-                            color: Color.fromRGBO(254, 254, 254, 0.5),
-                            fontSize: 15,
-                          ),
-                          textAlign: TextAlign.left,
+        child: Container(
+          // height: MediaQuery.of(context).size.height,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              UserDetails(),
+              Row(
+                children: [
+                  Container(
+                      margin: EdgeInsets.only(left: 20),
+                      child: Text(
+                        "RECENTS",
+                        style: TextStyle(
+                          color: Color.fromRGBO(254, 254, 254, 0.5),
+                          fontSize: 15,
+                        ),
+                        textAlign: TextAlign.left,
+                      )),
+                  GestureDetector(
+                    child: IconButton(
+                        onPressed: () {
+                          showToast();
+                          togglePanel();
+                        },
+                        icon: Icon(
+                          Icons.arrow_upward_sharp,
+                          color: Colors.white,
                         )),
-                    GestureDetector(
-                      child: IconButton(
-                          onPressed: () {
-                            showToast();
-                            togglePanel();
-                          },
-                          icon: Icon(
-                            Icons.arrow_upward_sharp,
-                            color: Colors.white,
-                          )),
-                          onTap: togglePanel,
-                    )
-                  ],
-                ),
-                NewDetails(),
-                
-              ],
-            ),
+                    onTap: togglePanel,
+                  )
+                ],
+              ),
+              NewDetails(),
+            ],
           ),
-          
-          
-        
+        ),
         replacement: Freqecontacted(context),
       ),
     );
   }
 
-  void togglePanel() =>panelController.isPanelOpen
-    ?panelController.close()
-    :panelController.open();
+  void togglePanel() => panelController.isPanelOpen
+      ? panelController.close()
+      : panelController.open();
 
   Container Freqecontacted(BuildContext context) {
     return Container(
@@ -136,7 +129,6 @@ class _LoadMoreState extends State<LoadMore> {
                 InkWell(
                   onTap: () {
                     showToast();
-
                   },
                   child: Column(
                     children: [

@@ -7,7 +7,9 @@ import 'package:taskapp/panel_widget.dart';
 class Dashboard extends StatefulWidget {
   // final PanelController panelController;
 
-  const Dashboard({Key? key, }) : super(key: key);
+  const Dashboard({
+    Key? key,
+  }) : super(key: key);
 
   @override
   _DashboardState createState() => _DashboardState();
@@ -17,9 +19,8 @@ class _DashboardState extends State<Dashboard> {
   final panelController = PanelController();
   @override
   Widget build(BuildContext context) {
-  final panelHeightclosed = MediaQuery.of(context).size.height * 0.1;
-  final panelHeightopen = MediaQuery.of(context).size.height * 0.55;
-
+    final panelHeightclosed = MediaQuery.of(context).size.height * 0.1;
+    final panelHeightopen = MediaQuery.of(context).size.height * 0.55;
 
     return Scaffold(
       backgroundColor: Color.fromRGBO(46, 43, 105, 1),
@@ -37,10 +38,10 @@ class _DashboardState extends State<Dashboard> {
         ],
       ),
       body: SlidingUpPanel(
-      controller: panelController,
-      maxHeight: panelHeightopen,
-      minHeight: panelHeightclosed,
-      borderRadius: BorderRadius.only(topRight: Radius.circular(18)),
+        controller: panelController,
+        maxHeight: panelHeightopen,
+        minHeight: panelHeightclosed,
+        borderRadius: BorderRadius.only(topRight: Radius.circular(18)),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -49,7 +50,7 @@ class _DashboardState extends State<Dashboard> {
                 //     maxHeight: MediaQuery.of(context).size.height * 2,
                 //     minHeight: MediaQuery.of(context).size.height),
                 // height: MediaQuery.of(context).copyWith().size.height,
-      
+
                 // margin: EdgeInsets.only(top: 10),
                 decoration: BoxDecoration(color: Colors.transparent),
                 child: Column(
@@ -67,7 +68,7 @@ class _DashboardState extends State<Dashboard> {
                           ),
                           textAlign: TextAlign.left,
                         )),
-                    LoadMore( panelController: panelController),
+                    LoadMore(panelController: panelController),
                   ],
                 ),
               ),
@@ -75,7 +76,7 @@ class _DashboardState extends State<Dashboard> {
           ),
         ),
         panelBuilder: (controller) => PanelWidget(
-          controller: controller, 
+          controller: controller,
           panelController: panelController,
         ),
       ),
