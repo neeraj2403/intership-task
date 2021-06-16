@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:taskapp/dashboard.dart';
 import 'package:taskapp/header.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -39,9 +41,13 @@ class _ProfilePageState extends State<ProfilePage> {
         backgroundColor: Color.fromRGBO(46, 43, 105, 1),
         appBar: AppBar(
           backgroundColor: Color.fromRGBO(46, 43, 105, 1),
-          leading: Icon(
-            Icons.arrow_drop_down_outlined,
-            size: 40,
+          leading: IconButton(
+            onPressed: (){
+                       Navigator.push(context, PageTransition(type: PageTransitionType.topToBottom,child: Dashboard()));
+              
+            },
+            icon:Icon(Icons.arrow_drop_down_outlined,
+            size: 40,)
           ),
           elevation: 0,
         ),

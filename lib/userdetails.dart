@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:taskapp/ProfilePage.dart';
 import 'package:taskapp/user_model.dart';
+import 'package:page_transition/page_transition.dart';
+
 // import 'package:google_pay_ui/model/userModel.dart';
 
 class UserDetails extends StatelessWidget {
@@ -34,11 +36,8 @@ class UserDetails extends StatelessWidget {
                       radius: 25,
                     ),
                     onTap: (){
-                       Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ProfilePage()),
-              );
-                    },
+                       Navigator.push(context, PageTransition(type: PageTransitionType.bottomToTop, child: ProfilePage()));
+                       }
                   ),
                   SizedBox(height: 2),
                   Text(
@@ -57,3 +56,4 @@ class UserDetails extends StatelessWidget {
     );
   }
 }
+
