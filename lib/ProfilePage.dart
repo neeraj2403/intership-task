@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:taskapp/dashboard.dart';
 import 'package:taskapp/header.dart';
+import 'package:taskapp/message.dart';
+import 'package:taskapp/transaction.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -74,7 +76,13 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: RaisedButton(
                         elevation: 5.0,
                         color: Color.fromRGBO(26, 20, 67, 1),
-                        onPressed: () async {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  type: PageTransitionType.topToBottom,
+                                  child: Transaction()));
+                        },
                         child: Text(
                           'TRANSACTION',
                           style: TextStyle(
@@ -92,7 +100,13 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: RaisedButton(
                         elevation: 5.0,
                         color: Color.fromRGBO(26, 20, 67, 1),
-                        onPressed: () async {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              PageTransition(
+                                  type: PageTransitionType.topToBottom,
+                                  child: Message()));
+                        },
                         child: Text(
                           'MESSAGE',
                           style: TextStyle(
@@ -235,7 +249,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             ),
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsets.only(top:8.0),
+                                padding: const EdgeInsets.only(top: 8.0),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -254,14 +268,15 @@ class _ProfilePageState extends State<ProfilePage> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsets.only(left:8.0),
+                                                padding: const EdgeInsets.only(
+                                                    left: 8.0),
                                                 child: Text(
                                                   '22 Aug',
                                                   style: TextStyle(
-                                                    fontSize: 13.0,
-                                                    color: Colors.grey[400]
-                                                    // fontWeight: FontWeight.bold,
-                                                  ),
+                                                      fontSize: 13.0,
+                                                      color: Colors.grey[400]
+                                                      // fontWeight: FontWeight.bold,
+                                                      ),
                                                 ),
                                               ),
                                             ],
@@ -272,8 +287,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                           style: TextStyle(
                                               fontSize: 18,
                                               color: Colors.grey[500],
-                                              fontWeight:FontWeight.bold
-                                              ),
+                                              fontWeight: FontWeight.bold),
                                         ),
                                       ],
                                     ),
@@ -289,7 +303,6 @@ class _ProfilePageState extends State<ProfilePage> {
                                               fontSize: 11,
                                               color: Colors.grey[500]),
                                         )),
-                                        
                                       ],
                                     ),
                                   ],
