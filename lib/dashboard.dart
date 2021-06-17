@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:taskapp/header.dart';
+import 'package:taskapp/home.dart';
 import 'package:taskapp/loadmore.dart';
 import 'package:taskapp/panel_widget.dart';
 
@@ -20,13 +22,22 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     final panelHeightclosed = MediaQuery.of(context).size.height * 0.1;
-    final panelHeightopen = MediaQuery.of(context).size.height * 0.55;
+    final panelHeightopen = MediaQuery.of(context).size.height * 0.58;
 
     return Scaffold(
       backgroundColor: Color.fromRGBO(46, 43, 105, 1),
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(46, 43, 105, 1),
         elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios),
+          onPressed: () {
+            Navigator.push(
+                context,
+                PageTransition(
+                    type: PageTransitionType.topToBottom, child: Home()));
+          },
+        ),
         // title: Text('Dashboard'),
         actions: [
           Padding(
@@ -39,6 +50,7 @@ class _DashboardState extends State<Dashboard> {
       ),
       body: SlidingUpPanel(
         controller: panelController,
+        
         maxHeight: panelHeightopen,
         minHeight: panelHeightclosed,
         borderRadius: BorderRadius.only(topRight: Radius.circular(18)),
@@ -59,7 +71,7 @@ class _DashboardState extends State<Dashboard> {
                   children: [
                     Header(),
                     Container(
-                        margin: EdgeInsets.only(left: 20, top: 30),
+                        margin: EdgeInsets.only(left: 20, top: 20),
                         child: Text(
                           "FREQUENTLY CONTACTED",
                           style: TextStyle(

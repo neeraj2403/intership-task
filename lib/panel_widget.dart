@@ -7,12 +7,7 @@ import 'package:taskapp/friendscard.dart';
 import 'package:taskapp/pie_chart_sections.dart';
 import 'package:taskapp/tabbar.dart';
 
-Map<String, double> dataMap = {
-  "Flutter": 5,
-  "React": 3,
-  "Xamarin": 2,
-  "Ionic": 2,
-};
+
 
 class PanelWidget extends StatefulWidget {
   final ScrollController controller;
@@ -47,12 +42,12 @@ class _PanelWidgetState extends State<PanelWidget> {
         // controller: controller,
         children: [
           Container(
-              margin: EdgeInsets.only(left: 20, top: 30),
+              margin: EdgeInsets.only(left: 20, top: 20),
               child: Text(
                 "YOUR ACCOUNT",
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 10,
+                  fontSize: 13,
                 ),
                 textAlign: TextAlign.left,
               )),
@@ -69,7 +64,7 @@ class _PanelWidgetState extends State<PanelWidget> {
                         "1.2L",
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: 15,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold),
                         textAlign: TextAlign.left,
                       ),
@@ -90,10 +85,10 @@ class _PanelWidgetState extends State<PanelWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "1.2L",
+                        "129",
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: 15,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold),
                         textAlign: TextAlign.left,
                       ),
@@ -114,10 +109,10 @@ class _PanelWidgetState extends State<PanelWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "1.2L",
+                        "4632",
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: 15,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold),
                         textAlign: TextAlign.left,
                       ),
@@ -150,7 +145,7 @@ class _PanelWidgetState extends State<PanelWidget> {
                               left: 20,
                             ),
                             child: Text(
-                              "YOUR ACCOUNT",
+                              "FRIENDS",
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 10,
@@ -185,10 +180,10 @@ class _PanelWidgetState extends State<PanelWidget> {
       children: [
         Container(
             margin: EdgeInsets.only(
-              left: 20,
+              left: 20, 
             ),
             child: Text(
-              "YOUR ACCOUNT",
+              "FRIENDS",
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 10,

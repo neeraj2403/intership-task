@@ -31,20 +31,24 @@ class UserDetails extends StatelessWidget {
               child: Column(
                 children: [
                   GestureDetector(
-                    child: CircleAvatar(
-                      backgroundImage: NetworkImage(dummyData[i].imgUrl),
-                      radius: 25,
-                    ),
-                    onTap: (){
-                       Navigator.push(context, PageTransition(type: PageTransitionType.bottomToTop, child: ProfilePage()));
-                       }
-                  ),
+                      child: CircleAvatar(
+                        backgroundImage: NetworkImage(dummyData[i].imgUrl),
+                        radius: 23,
+                      ),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            PageTransition(
+                                type: PageTransitionType.bottomToTop,
+                                child: ProfilePage()));
+                      }),
                   SizedBox(height: 2),
                   Text(
                     dummyData[i].name,
                     style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
+                      color: Color.fromRGBO(254, 254, 254, 0.5),
+
+                      // fontWeight: FontWeight.w500,
                     ),
                   ),
                 ],
@@ -56,4 +60,3 @@ class UserDetails extends StatelessWidget {
     );
   }
 }
-

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:taskapp/dashboard.dart';
 
 class Home extends StatefulWidget {
@@ -19,12 +20,21 @@ class _HomeState extends State<Home> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           RaisedButton(
-            child: new Text("Dashboard"),
+            child: new Text("Dashboard",style: TextStyle(
+              color: Colors.white
+            ),),
+            color: Colors.black,
+            
+            
+            
+
+            
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Dashboard()),
-              );
+               Navigator.push(
+                    context,
+                    PageTransition(
+                        type: PageTransitionType.bottomToTop,
+                        child: Dashboard()));
             },
           ),
           Container(height: 20.0), //SizedBox(height: 20.0),

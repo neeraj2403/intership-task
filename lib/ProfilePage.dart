@@ -1,3 +1,5 @@
+// import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:taskapp/dashboard.dart';
@@ -42,59 +44,67 @@ class _ProfilePageState extends State<ProfilePage> {
         appBar: AppBar(
           backgroundColor: Color.fromRGBO(46, 43, 105, 1),
           leading: IconButton(
-            onPressed: (){
-                       Navigator.push(context, PageTransition(type: PageTransitionType.topToBottom,child: Dashboard()));
-              
-            },
-            icon:Icon(Icons.arrow_drop_down_outlined,
-            size: 40,)
-          ),
+              onPressed: () {
+                // Navigator.push(
+                //     context,
+                //     PageTransition(
+                //         type: PageTransitionType.topToBottom,
+                //         child: Dashboard()));
+                Navigator.pop(context);
+              },
+              icon: Icon(
+                Icons.arrow_drop_down_outlined,
+                size: 40,
+              )),
           elevation: 0,
         ),
         body: SingleChildScrollView(
           child: Column(
             children: [
               Header(),
-              Row(
-                children: [
-                  Container(
-                    height: 1.0 * (MediaQuery.of(context).size.height / 20),
-                    width: 4.25 * (MediaQuery.of(context).size.width / 10),
-                    margin: EdgeInsets.only(
-                        top: 25, bottom: 10, left: 20, right: 10),
-                    child: RaisedButton(
-                      elevation: 5.0,
-                      color: Color.fromRGBO(26, 20, 67, 1),
-                      onPressed: () async {},
-                      child: Text(
-                        'TRANSACTION',
-                        style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.height / 60,
-                          // letterSpacing: 1.8,
-                          color: Colors.white,
+              Padding(
+                padding: const EdgeInsets.only(bottom: 15.0),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 1.0 * (MediaQuery.of(context).size.height / 20),
+                      width: 4.25 * (MediaQuery.of(context).size.width / 10),
+                      margin: EdgeInsets.only(
+                          top: 25, bottom: 10, left: 20, right: 10),
+                      child: RaisedButton(
+                        elevation: 5.0,
+                        color: Color.fromRGBO(26, 20, 67, 1),
+                        onPressed: () async {},
+                        child: Text(
+                          'TRANSACTION',
+                          style: TextStyle(
+                            fontSize: MediaQuery.of(context).size.height / 60,
+                            // letterSpacing: 1.8,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Container(
-                    height: 1.0 * (MediaQuery.of(context).size.height / 20),
-                    width: 4.25 * (MediaQuery.of(context).size.width / 10),
-                    margin: EdgeInsets.only(bottom: 10, top: 25),
-                    child: RaisedButton(
-                      elevation: 5.0,
-                      color: Color.fromRGBO(26, 20, 67, 1),
-                      onPressed: () async {},
-                      child: Text(
-                        'MESSAGE',
-                        style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.height / 60,
-                          // letterSpacing: 1.8,
-                          color: Colors.white,
+                    Container(
+                      height: 1.0 * (MediaQuery.of(context).size.height / 20),
+                      width: 4.25 * (MediaQuery.of(context).size.width / 10),
+                      margin: EdgeInsets.only(bottom: 10, top: 25),
+                      child: RaisedButton(
+                        elevation: 5.0,
+                        color: Color.fromRGBO(26, 20, 67, 1),
+                        onPressed: () async {},
+                        child: Text(
+                          'MESSAGE',
+                          style: TextStyle(
+                            fontSize: MediaQuery.of(context).size.height / 60,
+                            // letterSpacing: 1.8,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               Container(
                 width: double.infinity,
@@ -129,10 +139,10 @@ class _ProfilePageState extends State<ProfilePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "1.2L",
+                                  "19K",
                                   style: TextStyle(
                                       color: Colors.black,
-                                      fontSize: 20,
+                                      fontSize: 24,
                                       fontWeight: FontWeight.bold),
                                   textAlign: TextAlign.left,
                                 ),
@@ -153,15 +163,15 @@ class _ProfilePageState extends State<ProfilePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "1.2L",
+                                  "983",
                                   style: TextStyle(
                                       color: Colors.black,
-                                      fontSize: 20,
+                                      fontSize: 24,
                                       fontWeight: FontWeight.bold),
                                   textAlign: TextAlign.left,
                                 ),
                                 Text(
-                                  "Total Exchanges",
+                                  "upcoming paybacks",
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 10,
@@ -177,19 +187,20 @@ class _ProfilePageState extends State<ProfilePage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "1.2L",
+                                  "123",
                                   style: TextStyle(
                                       color: Colors.black,
-                                      fontSize: 20,
+                                      fontSize: 24,
                                       fontWeight: FontWeight.bold),
                                   textAlign: TextAlign.left,
                                 ),
                                 Text(
-                                  "Total Exchanges",
+                                  "upcoming dues",
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 10,
                                   ),
+                                  softWrap: true,
                                   textAlign: TextAlign.left,
                                 )
                               ],
@@ -209,48 +220,80 @@ class _ProfilePageState extends State<ProfilePage> {
                     Card(
                       child: Padding(
                         padding: const EdgeInsets.only(
-                            top: 10, left: 20, right: 20, bottom: 10),
+                            top: 10, left: 20, right: 20, bottom: 20),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             CircleAvatar(
                               backgroundImage: NetworkImage(
-                                  'https://randomuser.me/portraits/men/50.jpg'),
+                                  'https://randomuser.me/portraits/men/49.jpg'),
                               radius: 28.0,
                             ),
                             SizedBox(
                               width: 8.0,
                             ),
                             Expanded(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Expanded(
-                                        child: Text(
-                                          'name',
-                                          style: TextStyle(
-                                            fontSize: 18.0,
-                                            fontWeight: FontWeight.w500,
+                              child: Padding(
+                                padding: const EdgeInsets.only(top:8.0),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: Row(
+                                            // crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Miles',
+                                                style: TextStyle(
+                                                  fontSize: 15.0,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.only(left:8.0),
+                                                child: Text(
+                                                  '22 Aug',
+                                                  style: TextStyle(
+                                                    fontSize: 13.0,
+                                                    color: Colors.grey[400]
+                                                    // fontWeight: FontWeight.bold,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                      ),
-                                      Text('name'),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 5.0,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Expanded(child: Text('name')),
-                                      Text('name'),
-                                    ],
-                                  ),
-                                ],
+                                        Text(
+                                          '100',
+                                          style: TextStyle(
+                                              fontSize: 18,
+                                              color: Colors.grey[500],
+                                              fontWeight:FontWeight.bold
+                                              ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(
+                                      height: 4.0,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                            child: Text(
+                                          'to you',
+                                          style: TextStyle(
+                                              fontSize: 11,
+                                              color: Colors.grey[500]),
+                                        )),
+                                        
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ],

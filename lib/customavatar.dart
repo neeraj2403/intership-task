@@ -5,7 +5,7 @@ class CustomAvatars extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-List<String> images = ["https://randomuser.me/portraits/men/51.jpg", "https://randomuser.me/portraits/men/51.jpg", "https://randomuser.me/portraits/men/51.jpg"];
+List<String> images = ["https://randomuser.me/portraits/men/51.jpg", "https://randomuser.me/portraits/men/50.jpg", "https://randomuser.me/portraits/men/49.jpg"];
     
     return Container(
       margin: EdgeInsets.only(left: 80,top: 10),

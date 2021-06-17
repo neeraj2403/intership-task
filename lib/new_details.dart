@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:taskapp/ProfilePage.dart';
 import 'package:taskapp/user_model.dart';
 // import 'package:google_pay_ui/model/userModel.dart';
 
@@ -26,16 +28,26 @@ class NewDetails extends StatelessWidget {
           return GridTile(
             child: Column(
               children: [
-                CircleAvatar(
-                  backgroundImage: NetworkImage(newData[i].imgUrl),
-                  radius: 25,
+                GestureDetector(
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(newData[i].imgUrl),
+                    radius: 23,
+                  ),
+                  onTap: (){
+                     Navigator.push(
+                            context,
+                            PageTransition(
+                                type: PageTransitionType.bottomToTop,
+                                child: ProfilePage()));
+                  },
                 ),
                 SizedBox(height: 2),
                 Text(
                   newData[i].name,
                   style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
+                    color: Color.fromRGBO(254, 254, 254, 0.5),
+
+                    // fontWeight: FontWeight.w500,
                   ),
                 ),
               ],

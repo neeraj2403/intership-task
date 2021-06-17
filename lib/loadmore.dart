@@ -1,9 +1,12 @@
 // import 'package:dashed_circle/dashed_circle.dart';
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:taskapp/new_details.dart';
 import 'package:taskapp/user_model.dart';
 import 'package:taskapp/userdetails.dart';
+
+import 'ProfilePage.dart';
 // import 'package:google_pay_ui/model/userModel.dart';
 
 class LoadMore extends StatefulWidget {
@@ -57,7 +60,6 @@ class _LoadMoreState extends State<LoadMore> {
                   IconButton(
                       onPressed: () {
                         showToast();
-                        
                       },
                       icon: Icon(
                         Icons.arrow_upward_sharp,
@@ -73,8 +75,6 @@ class _LoadMoreState extends State<LoadMore> {
       ),
     );
   }
-
-
 
   Container Freqecontacted(BuildContext context) {
     return Container(
@@ -97,19 +97,30 @@ class _LoadMoreState extends State<LoadMore> {
                         children: [
                           Padding(
                             padding: EdgeInsets.all(3),
-                            child: CircleAvatar(
-                              backgroundImage: NetworkImage(
-                                dummyData[index].imgUrl,
+                            child: GestureDetector(
+                              child: CircleAvatar(
+                                backgroundImage: NetworkImage(
+                                  dummyData[index].imgUrl,
+                                ),
+                                radius: 23,
                               ),
-                              radius: 25,
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    PageTransition(
+                                        type: PageTransitionType.bottomToTop,
+                                        child: ProfilePage()));
+                              },
                             ),
                           ),
                           SizedBox(height: 2),
                           Text(
                             dummyData[index].name,
                             style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
+                              color: Color.fromRGBO(254, 254, 254, 0.5),
+
+                              // fontSize: 12
+                              // fontWeight: FontWeight.w500,
                             ),
                           ),
                         ],
@@ -128,7 +139,7 @@ class _LoadMoreState extends State<LoadMore> {
                   child: Column(
                     children: [
                       CircleAvatar(
-                        radius: 25,
+                        radius: 23,
                         child: Icon(
                           Icons.keyboard_arrow_down,
                           size: 25,
@@ -141,8 +152,9 @@ class _LoadMoreState extends State<LoadMore> {
                         child: Text(
                           "Show More",
                           style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
+                            color: Color.fromRGBO(254, 254, 254, 0.5),
+
+                            // fontWeight: FontWeight.w500,
                           ),
                         ),
                       ),

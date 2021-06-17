@@ -10,7 +10,7 @@ class Header extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            margin: EdgeInsets.only(left: 20, top: 50),
+            margin: EdgeInsets.only(left: 20, top: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -34,7 +34,7 @@ class Header extends StatelessWidget {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(right: 30, top: 30),
+            margin: EdgeInsets.only(right: 30, top: 20),
             width: 70,
             height: 70,
             decoration: BoxDecoration(
